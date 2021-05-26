@@ -270,7 +270,7 @@ def CDR3_defined_sequences_IMGT(pat, output_dir, seq_files, annot_files,samples,
       all_seqs = Tree()
       outseq,indseq = '',0
       sample = samples[i]
-      CDR3_IMGT_merged_file = seq_files[i].replace("Fully_reduced_","Cluster_CDR3_defined_identities_").replace(".fasta",".txt")
+      CDR3_IMGT_merged_file = output_dir+"Cluster_CDR3_defined_identities_"+sample+".txt"
       fh=open(seq_files[i],"r")
       lens = []
       for header,sequence in fasta_iterator(fh):
@@ -279,7 +279,7 @@ def CDR3_defined_sequences_IMGT(pat, output_dir, seq_files, annot_files,samples,
         lens.append(len(sequence))
       fh.close()
       print (seq_files[i], sum(lens)*1.0/len(lens))
-      fh=open(annot_files[i]+"3_Nt-sequences.txt","r")
+      fh=open(annot_files[i],"r")
       out, ind = '#sample\tid\tV\tJ\tCDR3\tcode\n',0
       codes, inv_codes={},Tree()
       passed, failed = 0,0
@@ -457,7 +457,6 @@ def Compare_CDR3s(cdr3_sub, end_indent, n_mutations_allowed,G):
             s2 = cdr3_2
         mm= [i for i in range(0,min([len(s1),len(s2)])) if s1[i] != s2[i]]
         if(len(mm)<=n_mutations_allowed):
-            print (cdr3_1, cdr3_2)
             G.add_edge(cdr3_1, cdr3_2)
   return(G)
 
