@@ -6,7 +6,7 @@ MRDARCY developed by Rachael Bashford-Rogers (2018) at the University of Oxford 
 If you find the methods in MRDARCY, please cite the following reference: Bashford-Rogers, R. J., et al. (2016). "Eye on the B-ALL: B-cell receptor repertoires reveal persistence of numerous B-lymphoblastic leukemia subclones from diagnosis to relapse." Leukemia 30(12): 2312-2321.
 
 
-**Installation**
+**Installation:**
 
 Pre-requisites: 
 - CD-hit (installed from https://github.com/weizhongli/cdhit)
